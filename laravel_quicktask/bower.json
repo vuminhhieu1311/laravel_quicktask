@@ -1,0 +1,21 @@
+{
+  "name": "laravel_quicktask",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Vu Minh Hieu <vuminhhieu1311@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vuminhhieu1311/laravel_quicktask",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "admin_template": "https://github.com/vuminhhieu1311/admin_template.git"
+  }
+}

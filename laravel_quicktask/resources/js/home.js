@@ -95,10 +95,8 @@ $(document).ready(function () {
 });
 
 $(window).load(function () {
-
     $('#mycalendar').monthly({
         mode: 'event',
-
     });
 
     $('#mycalendar2').monthly({

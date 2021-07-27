@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::get('change-language/{locale}', [
     HomeController::class,
     'changeLanguage'
 ])->name('change-language');
+
+Route::resource('categories', CategoryController::class);
