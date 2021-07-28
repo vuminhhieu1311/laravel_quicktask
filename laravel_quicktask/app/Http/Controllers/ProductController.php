@@ -16,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderByDesc('updated_at')->get();
 
         return view('product.list', [
             'products' => $products,
@@ -70,7 +70,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('product.detail', [
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -81,7 +85,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $categories = Category::all();
+
+        return view('product.edit', [
+            'product' => $product,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -91,9 +101,29 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductRequest $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $fileName = $product->image;
+
+        if (isset($request->image)) {
+            $fileName = time() . '-' . $request->name . '.' .
+                $request->image->extension();
+            $request->image->move(public_path('images'), $fileName);
+        }
+
+        $product->update([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'price' => $request->price,
+            'color' => $request->color,
+            'material' => $request->material,
+            'image' => $fileName,
+        ]);
+
+        return redirect()->route('products.index')
+            ->with('success', __('messages.update-success'));
     }
 
     /**
@@ -104,6 +134,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect()->route('products.index')
+            ->with('success', __('messages.delete-success'));
     }
 }

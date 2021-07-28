@@ -17,7 +17,7 @@
                                     <form role="form" action="{{ route('categories.store') }}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">{{ __('messages.category-name') }}</label>
+                                            <label for="exampleInputEmail1">{{ __('messages.category-name') }}*</label>
                                             <input type="text" name="name" class="form-control" id="exampleInputEmail1"
                                                 value="{{ old('name') }}">
                                             @error('name')

@@ -5,6 +5,7 @@
             <div class="form-w3layouts">
                 <div class="table-agile-info">
                     <p class="text-success">{{ Session::get('success', '') }}</p>
+                    <p class="text-danger">{{ Session::get('fail', '') }}</p>
                     <div class="panel panel-default">
                         <div class="panel-heading">{{ __('messages.list-category') }}</div>
                         <div class="table-responsive">
@@ -19,7 +20,11 @@
                                 <tbody>
                                     @foreach ($categories as $category)
                                         <tr>
-                                            <td>{{ $category->name }}</td>
+                                            <td>
+                                                <a href="{{ route('categories.show', ['category' => $category->id]) }}">
+                                                    {{ $category->name }}
+                                                </a>
+                                            </td>
                                             <td>{{ $category->description }}</td>
                                             <td>
                                                 <button class="submit-btn">

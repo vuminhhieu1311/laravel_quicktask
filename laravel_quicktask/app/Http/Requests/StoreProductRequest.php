@@ -26,17 +26,25 @@ class StoreProductRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'name' => 'required|max:255',
             'description' => 'max:1000',
             'color' => 'max:255',
             'material' => 'max:255',
-            'image' => 'required|image',
             'price' => 'required|numeric',
             'category_id' => [
                 'required',
                 Rule::in(Category::pluck('id')),
-            ]
+            ],
+            'image' => [
+                'image',
+            ],
         ];
+
+        if ($this->method() == 'POST') {
+            array_push($rules['image'], 'required');
+        }
+
+        return $rules;
     }
 }

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -16,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderByDesc('updated_at')->get();
 
         return view('category.list', [
             'categories' => $categories,
@@ -55,7 +56,16 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+
+        if (!empty($category)) {
+            return view('category.show', [
+                'category' => $category,
+                'products' => $category->products,
+            ]);
+        } else {
+            abort(404);
+        }
     }
 
     /**
@@ -100,9 +110,15 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
-        $category->delete();
 
-        return redirect()->route('categories.index')
-            ->with('success', __('messages.delete-success'));
+        try {
+            $category->delete();
+
+            return redirect()->route('categories.index')
+                ->with('success', __('messages.delete-success'));
+        } catch (Exception $e) {
+            return redirect()->route('categories.index')
+                ->with('fail', __('messages.delete-fail'));
+        }
     }
 }

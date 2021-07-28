@@ -119,6 +119,21 @@ $(window).load(function () {
     }
 });
 
+let fileUpload = document.getElementById("image");
+const productImg = document.querySelector(".product-img");
+fileUpload.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            const result = reader.result;
+            console.log(result);
+            productImg.src = result;
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
 var deleteBtn = document.querySelector('.delete-submit-btn');
 deleteBtn.addEventListener("click", deleteItem);
 
