@@ -17,4 +17,12 @@ return [
     'update-category' => 'Update Category',
     'update-success' => 'You have updated successfully.',
     'delete-success' => 'You have deleted successfully.',
+    'product-name' => 'Product Name',
+    'product-description' => 'Description',
+    'product-price' => 'Price',
+    'product-color' => 'Color',
+    'product-material' => 'Material',
+    'product-image' => 'Image',
+    'product-category' => 'Category',
+    'delete-confirm' => 'Are your sure you want to delete?',
 ];

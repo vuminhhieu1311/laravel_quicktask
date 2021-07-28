@@ -118,3 +118,10 @@ $(window).load(function () {
             alert('Just a heads-up, events will not work when run locally.');
     }
 });
+
+var deleteBtn = document.querySelector('.delete-submit-btn');
+deleteBtn.addEventListener("click", deleteItem);
+
+function deleteItem() {
+    return confirm('Are your sure?');
+}
