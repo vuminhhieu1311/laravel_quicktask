@@ -14,7 +14,7 @@ return [
     'category-name' => 'Tên danh mục',
     'category-description' => 'Mô tả danh mục',
     'create-success' => 'Bạn đã thêm thành công.',
-    'update-category' => 'Chỉnh Sửa Danh Mục',
+    'update-category' => 'Cập Nhật Danh Mục',
     'update-success' => 'Bạn đã chỉnh sửa thành công.',
     'delete-success' => 'Bạn đã xóa thành công.',
     'product-name' => 'Tên sản phẩm',
@@ -25,4 +25,7 @@ return [
     'product-image' => 'Hình Ảnh',
     'product-category' => 'Phân loại',
     'delete-confirm' => 'Bạn có chắc chắn muốn xóa không?',
+    'update-product' => 'Cập Nhật Sản Phẩm',
+    'category' => 'Phân Loại Sản Phẩm',
+    'delete-fail' => 'Bạn không thể xóa danh mục này.',
 ];

@@ -25,4 +25,7 @@ return [
     'product-image' => 'Image',
     'product-category' => 'Category',
     'delete-confirm' => 'Are your sure you want to delete?',
+    'update-product' => 'Update Product',
+    'category' => 'Category',
+    'delete-fail' => 'You can not delete this category.',
 ];

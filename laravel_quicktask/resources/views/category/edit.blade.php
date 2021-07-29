@@ -33,7 +33,7 @@
                                                 id=" exampleInputPassword1">{{ $category->description }}</textarea>
                                         </div>
                                         <button type="submit"
-                                            class="btn btn-info">{{ __('messages.add-category') }}</button>
+                                            class="btn btn-info">{{ __('messages.update-category') }}</button>
                                     </form>
                                 </div>
 
