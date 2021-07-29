@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,6 @@ Route::get('change-language/{locale}', [
 ])->name('change-language');
 
 Route::resource('categories', CategoryController::class);
+
+Route::resource('products', ProductController::class);
+

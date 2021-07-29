@@ -17,4 +17,12 @@ return [
     'update-category' => 'Chỉnh Sửa Danh Mục',
     'update-success' => 'Bạn đã chỉnh sửa thành công.',
     'delete-success' => 'Bạn đã xóa thành công.',
+    'product-name' => 'Tên sản phẩm',
+    'product-description' => 'Mô tả',
+    'product-price' => 'Giá',
+    'product-color' => 'Màu sắc',
+    'product-material' => 'Chất liệu',
+    'product-image' => 'Hình Ảnh',
+    'product-category' => 'Phân loại',
+    'delete-confirm' => 'Bạn có chắc chắn muốn xóa không?',
 ];

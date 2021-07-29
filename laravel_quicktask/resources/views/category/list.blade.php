@@ -33,8 +33,7 @@
                                                     method="post">
                                                     @csrf
                                                     @method("delete")
-                                                    <button type="submit" class="submit-btn"
-                                                        onclick="return confirm('Bạn có chắc là muốn xóa danh mục này ko?')">
+                                                    <button type="submit" class="submit-btn delete-submit-btn">
                                                         <i class="fa fa-times text-danger text"></i>
                                                     </button>
                                                 </form>

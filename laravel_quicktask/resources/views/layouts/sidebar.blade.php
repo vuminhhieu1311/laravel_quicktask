@@ -16,8 +16,8 @@
                         <span>{{ __('messages.categories') }}</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="">{{ __('messages.add-category') }}</a></li>
-                        <li><a href="">{{ __('messages.list-category') }}</a></li>
+                        <li><a href="{{ route('categories.create') }}">{{ __('messages.add-category') }}</a></li>
+                        <li><a href="{{ route('categories.index') }}">{{ __('messages.list-category') }}</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -26,8 +26,8 @@
                         <span>{{ __('messages.products') }}</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="">{{ __('messages.add-product') }}</a></li>
-                        <li><a href="">{{ __('messages.list-product') }}</a></li>
+                        <li><a href="{{ route('products.create') }}">{{ __('messages.add-product') }}</a></li>
+                        <li><a href="{{ route('products.index') }}">{{ __('messages.list-product') }}</a></li>
                     </ul>
                 </li>
             </ul>

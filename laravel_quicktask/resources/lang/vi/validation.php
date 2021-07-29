@@ -18,6 +18,8 @@ return [
     'max' => [
         'string' => ':attribute không được vượt quá :max kí tự.',
     ],
+    'numeric' => ':attribute phải là một số.',
+    'image' => ':attribute không đúng định dạng.',
 
     /*
     |--------------------------------------------------------------------------
@@ -31,7 +33,12 @@ return [
     */
 
     'attributes' => [
-        'name' => 'Tên'
+        'name' => 'Tên',
+        'price' => 'Giá',
+        'image' => 'Hình ảnh',
+        'description' => 'Mô tả',
+        'color' => 'Màu sắc',
+        'material' => 'Chất liệu',
     ],
 
 ];
